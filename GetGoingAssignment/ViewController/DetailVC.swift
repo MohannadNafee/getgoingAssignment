@@ -14,6 +14,7 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         
         setMap()
+        // display name, phone number and website to label
         if let id = place?.placeId {
             fetchDetail(placeId: id) { (detail) in
                 DispatchQueue.main.async {
@@ -43,6 +44,7 @@ class DetailVC: UIViewController {
             mapView.setRegion(region, animated: true)
         }
     }
+    // fetch date for place details
     func fetchDetail(placeId: String, completion: @escaping (_ detail: PlaceDetail) -> Void ){
         let urlString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&fields=formatted_phone_number,website,name&key=\(Constants.apiKey)"
         guard let url = URL(string: urlString) else { return }

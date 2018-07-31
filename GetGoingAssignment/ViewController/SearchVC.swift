@@ -5,9 +5,12 @@ class SearchVC: UIViewController {
     var textSearchQuery: TextSearchQuery?
     var locationSearchQuery: LocationSearchQuery?
     var currentLocation: CLLocation?
+    var rank = Rank.prominence
+    var radius = ""
+    var isOpenNow = false
     
     @IBOutlet weak var searchSg: UISegmentedControl!
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +18,8 @@ class SearchVC: UIViewController {
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
         if searchSg.selectedSegmentIndex == 0 {
-            if let inputValue = searchTextField.text {
-                textSearchQuery = TextSearchQuery(queryString: inputValue, rank: Rank.prominence, radius: "", isOpenNow: false)
+            if let inputValue = searchBar.text {
+                textSearchQuery = TextSearchQuery(queryString: inputValue, rank: rank, radius: radius, isOpenNow: isOpenNow)
                 GooglePlaceAPI.searchByText(textQuery: textSearchQuery!, completionHandler: {(status, json) in
                     if let jsonObj = json {
                         let places = APIParser.parserAPIResponse(json: jsonObj)
@@ -42,7 +45,7 @@ class SearchVC: UIViewController {
         }
         else {
             guard let curLocation = currentLocation  else { return }
-            locationSearchQuery = LocationSearchQuery(location: curLocation, rank: Rank.prominence, radius: "", isOpenNow: false)
+            locationSearchQuery = LocationSearchQuery(location: curLocation, rank: rank, radius: radius, isOpenNow: isOpenNow)
             GooglePlaceAPI.searchByCoreLocation(locationQuery: locationSearchQuery!,  completionHandler: {(status, json) in
                 if let jsonObj = json {
                     let places = APIParser.parserAPIResponse(json: jsonObj)
@@ -81,6 +84,12 @@ class SearchVC: UIViewController {
             LocationService.sharedInstane.startUpdatingLocation()
         }
     }
+    
+    @IBAction func filteAction(_ sender: Any) {
+        let s = self.storyboard?.instantiateViewController(withIdentifier: "FilterVC") as! FilterVC
+        s.delegate = self
+        self.navigationController?.pushViewController(s, animated: true)
+    }
 }
 extension SearchVC: LocationServiceDelegate {
     func tracingLocation(_ currentLocation: CLLocation) {
@@ -88,6 +97,14 @@ extension SearchVC: LocationServiceDelegate {
     }
     func tracingLocationDidFailWithError(_error: Error) {
         generalAlert("Location Erro", "Error occurred while trying to get current location")
+    }
+}
+extension SearchVC: FilterSettingsDelegate {
+    // get query items from FilterVC
+    func getQueryItems(rank: Rank, radius: String, isOpenNow: Bool) {
+        self.rank = rank
+        self.radius = radius
+        self.isOpenNow = isOpenNow
     }
 }
 

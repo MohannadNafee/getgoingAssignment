@@ -1,5 +1,5 @@
 import UIKit
 
-class FilterSettingsDelegate: NSObject {
-
+protocol FilterSettingsDelegate {
+    func getQueryItems(rank: Rank,radius: String, isOpenNow: Bool)
 }

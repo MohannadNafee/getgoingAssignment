@@ -2,11 +2,12 @@ import UIKit
 
 class ResultsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // sort the data based on segmented control selection
     @IBAction func sortSgChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            allPlaces = allPlaces.sorted { $0.name < $1.name }
+            allPlaces = allPlaces.sorted { $0.name < $1.name } // sort alphabatically
         } else {
-            allPlaces = allPlaces.sorted { $0.rating < $1.rating }
+            allPlaces = allPlaces.sorted { $0.rating > $1.rating } // sort by desceding number
         }
         tableView.reloadData()
     }
@@ -16,7 +17,7 @@ class ResultsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var allPlaces: [PlaceOfInterest] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        allPlaces = allPlaces.sorted { $0.name < $1.name }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -51,7 +52,7 @@ class ResultsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let star3 = "☆ ☆ ★ ★ ★"
         let star4 = "☆ ★ ★ ★ ★"
         let star5 = "★ ★ ★ ★ ★"
-        switch rating {
+        switch rating.rounded(.towardZero) {
         case 0:
             return noStar
         case 1:
