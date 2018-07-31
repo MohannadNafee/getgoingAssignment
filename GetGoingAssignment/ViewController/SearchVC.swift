@@ -24,6 +24,9 @@ class SearchVC: UIViewController {
                         DispatchQueue.main.async {
                             if places.count > 0 {
                                 print("search count \(places.count)")
+                                let s = self.storyboard?.instantiateViewController(withIdentifier: "ResultsVC") as! ResultsVC
+                                s.allPlaces = places
+                                self.navigationController?.pushViewController(s, animated: true)
                             } else {
                                 self.generalAlert("Error", "No results found")
                             }
@@ -47,6 +50,9 @@ class SearchVC: UIViewController {
                     DispatchQueue.main.async {
                         if places.count > 0 {
                             print("search count \(places.count)")
+                            let s = self.storyboard?.instantiateViewController(withIdentifier: "ResultsVC") as! ResultsVC
+                            s.allPlaces = places
+                            self.navigationController?.pushViewController(s, animated: true)
                         } else {
                             self.generalAlert("Something wrong", "No results found")
                         }

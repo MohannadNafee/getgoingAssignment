@@ -4,7 +4,7 @@ import Foundation
 class PlaceOfInterest {
     var id: String
     var name: String
-    var rating: Double?
+    var rating: Double = 0
     var formattedAddress: String?
     var icon: String?
     var placeId: String?

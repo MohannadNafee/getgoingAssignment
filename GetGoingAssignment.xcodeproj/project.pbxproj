@@ -22,6 +22,8 @@
 		12C0D213210FE121003995D2 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D212210FE121003995D2 /* Rank.swift */; };
 		12C0D215210FE287003995D2 /* TextSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D214210FE287003995D2 /* TextSearchQuery.swift */; };
 		12C0D218210FE8D9003995D2 /* FilterSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D217210FE8D9003995D2 /* FilterSettingsDelegate.swift */; };
+		12C0D21C2110148A003995D2 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D21B2110148A003995D2 /* PlaceTableViewCell.swift */; };
+		12C0D21E211014B2003995D2 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D21D211014B2003995D2 /* ResultsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		12C0D212210FE121003995D2 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		12C0D214210FE287003995D2 /* TextSearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchQuery.swift; sourceTree = "<group>"; };
 		12C0D217210FE8D9003995D2 /* FilterSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsDelegate.swift; sourceTree = "<group>"; };
+		12C0D21B2110148A003995D2 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		12C0D21D211014B2003995D2 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				12A0FB9E210E8EB300BAA7FA /* Assets.xcassets */,
 				12C0D216210FE8BF003995D2 /* Delegate */,
 				12C0D204210FDDE4003995D2 /* Model */,
+				12C0D21A21101455003995D2 /* View */,
 				12C0D1FB210FDDC7003995D2 /* Service */,
 				12C0D2192110111F003995D2 /* ViewController */,
 				12A0FB9B210E8EB100BAA7FA /* Main.storyboard */,
@@ -122,8 +127,17 @@
 			children = (
 				12C0D20D210FDF34003995D2 /* SearchVC.swift */,
 				12C0D210210FE033003995D2 /* FilterVC.swift */,
+				12C0D21D211014B2003995D2 /* ResultsVC.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12C0D21A21101455003995D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12C0D21B2110148A003995D2 /* PlaceTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +215,10 @@
 				12C0D20A210FDE24003995D2 /* PlaceOfInterest.swift in Sources */,
 				12C0D20E210FDF34003995D2 /* SearchVC.swift in Sources */,
 				12C0D203210FDDD0003995D2 /* APIParser.swift in Sources */,
+				12C0D21C2110148A003995D2 /* PlaceTableViewCell.swift in Sources */,
 				12C0D200210FDDD0003995D2 /* NetworkingLayer.swift in Sources */,
 				12C0D218210FE8D9003995D2 /* FilterSettingsDelegate.swift in Sources */,
+				12C0D21E211014B2003995D2 /* ResultsVC.swift in Sources */,
 				12C0D201210FDDD0003995D2 /* LocationService.swift in Sources */,
 				12C0D209210FDE24003995D2 /* Constants.swift in Sources */,
 				12C0D202210FDDD0003995D2 /* GooglePlaceAPI.swift in Sources */,
