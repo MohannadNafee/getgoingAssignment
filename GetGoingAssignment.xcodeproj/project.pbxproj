@@ -24,6 +24,8 @@
 		12C0D218210FE8D9003995D2 /* FilterSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D217210FE8D9003995D2 /* FilterSettingsDelegate.swift */; };
 		12C0D21C2110148A003995D2 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D21B2110148A003995D2 /* PlaceTableViewCell.swift */; };
 		12C0D21E211014B2003995D2 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D21D211014B2003995D2 /* ResultsVC.swift */; };
+		12C0D2202110252E003995D2 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D21F2110252E003995D2 /* DetailVC.swift */; };
+		12C0D2222110B059003995D2 /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D2212110B059003995D2 /* PlaceDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		12C0D217210FE8D9003995D2 /* FilterSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsDelegate.swift; sourceTree = "<group>"; };
 		12C0D21B2110148A003995D2 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		12C0D21D211014B2003995D2 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
+		12C0D21F2110252E003995D2 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		12C0D2212110B059003995D2 /* PlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				12C0D206210FDE24003995D2 /* PlaceOfInterest.swift */,
 				12C0D212210FE121003995D2 /* Rank.swift */,
 				12C0D214210FE287003995D2 /* TextSearchQuery.swift */,
+				12C0D2212110B059003995D2 /* PlaceDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				12C0D20D210FDF34003995D2 /* SearchVC.swift */,
 				12C0D210210FE033003995D2 /* FilterVC.swift */,
 				12C0D21D211014B2003995D2 /* ResultsVC.swift */,
+				12C0D21F2110252E003995D2 /* DetailVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 				12C0D20A210FDE24003995D2 /* PlaceOfInterest.swift in Sources */,
 				12C0D20E210FDF34003995D2 /* SearchVC.swift in Sources */,
 				12C0D203210FDDD0003995D2 /* APIParser.swift in Sources */,
+				12C0D2222110B059003995D2 /* PlaceDetail.swift in Sources */,
 				12C0D21C2110148A003995D2 /* PlaceTableViewCell.swift in Sources */,
+				12C0D2202110252E003995D2 /* DetailVC.swift in Sources */,
 				12C0D200210FDDD0003995D2 /* NetworkingLayer.swift in Sources */,
 				12C0D218210FE8D9003995D2 /* FilterSettingsDelegate.swift in Sources */,
 				12C0D21E211014B2003995D2 /* ResultsVC.swift in Sources */,

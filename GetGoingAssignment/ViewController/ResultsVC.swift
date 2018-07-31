@@ -37,6 +37,13 @@ class ResultsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    // show details by clicking row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let s = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        s.place = allPlaces[indexPath.row]
+        self.navigationController?.pushViewController(s, animated: true)
+    }
+    // set star based on rating
     func getStar(rating: Double) -> String {
         let noStar = "☆ ☆ ☆ ☆ ☆"
         let star1 = "☆ ☆ ☆ ☆ ★"
