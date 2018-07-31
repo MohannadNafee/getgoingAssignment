@@ -6,20 +6,33 @@ class DetailVC: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var shopImageview: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
+    
     let radius = 5000
     var place: PlaceOfInterest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setMap()
         if let id = place?.placeId {
             fetchDetail(placeId: id) { (detail) in
-                self.descriptionLabel.text = "\(detail.name)\nPh: \(detail.formatted_phone_number)\nWebsite: \(detail.website)"
+                DispatchQueue.main.async {
+                    self.descriptionLabel.text = "\(detail.name)\nPh: \(detail.formatted_phone_number)\nWebsite: \(detail.website)"
+                }
             }
         }
-        setMapViewCoordinate()
+        if let photRef = place?.photoReference {
+            // build image url from photo reference
+            let urlString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=\(photRef)&key=\(Constants.apiKey)"
+            // download and set image
+            if let url = URL(string: urlString), let dataContents = try? Data(contentsOf: url), let src = UIImage(data: dataContents) {
+                shopImageview.image = src
+            }
+        }
+//        https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=CmRaAAAAjlwzTYbXRoLn_7MHKew_hrkvz1A8xzeJd6U63gfW_4DRCZsYwkre-qUizwZTm8ycH0JwrfW0-nue2frC7jSo2k8se7ZQaOAKlTqS72ASpixQmAHdv-tsuuDG0_-rO_CMEhA5b42_MSNfl-uGRHGhhGHqGhQ5_LnKF8LzarlNEWZwsxBgsh5Qcw&key=AIzaSyD2eysOOF0jIjDqYwrVOgQ9Bicgckr_1Qc
+        
     }
-    func setMapViewCoordinate(){
+    func setMap(){
         if let coordinate = place?.location?.coordinate {
             let annotation = MKPointAnnotation()
             annotation.title = place?.name
@@ -30,8 +43,6 @@ class DetailVC: UIViewController {
             mapView.setRegion(region, animated: true)
         }
     }
-    
-    
     func fetchDetail(placeId: String, completion: @escaping (_ detail: PlaceDetail) -> Void ){
         let urlString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&fields=formatted_phone_number,website,name&key=\(Constants.apiKey)"
         guard let url = URL(string: urlString) else { return }
@@ -47,11 +58,7 @@ class DetailVC: UIViewController {
                         let detail  = try JSONDecoder().decode(PlaceDetail.self, from: jsonData!) // decode PlaceDetail
                         completion(detail)
                     }
-                    
                 }
-                
-                
-                
             } catch {
                 print("Some error has been occured while processing API request!")
             }
@@ -71,7 +78,6 @@ extension DetailVC : MKMapViewDelegate {
         
         return view
     }
-    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         let launchingOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
