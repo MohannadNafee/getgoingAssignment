@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GetGoingAssignment/Service/GooglePlaceAPI.swift"
+            timestampString = "554700946.452652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "searchByText(textQuery:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static GetGoingAssignment.GooglePlaceAPI.searchByText(textQuery: GetGoingAssignment.TextSearchQuery, completionHandler: (Swift.Int, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "GetGoingAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maruf/Documents/ios_projects/GetGoingAssignment/GetGoingAssignment/Service/GooglePlaceAPI.swift"
+                  timestampString = "554700179.745611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "2371">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in static GetGoingAssignment.GooglePlaceAPI.searchByText(textQuery: GetGoingAssignment.TextSearchQuery, completionHandler: (Swift.Int, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "GetGoingAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maruf/Documents/ios_projects/GetGoingAssignment/GetGoingAssignment/Service/GooglePlaceAPI.swift"
+                  timestampString = "554700179.7478499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
