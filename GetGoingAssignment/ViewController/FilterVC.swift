@@ -4,15 +4,19 @@ class FilterVC: UIViewController {
     
     // set picker values
     var pickerComponents: [String] = ["5000","10000","15000","20000","25000","30000", "35000", "40000", "45000", "50000"]
-    var radius = "50000"
+    var radius = "25000"
     var delegate: FilterSettingsDelegate?
     var rank = Rank.prominence
     @IBOutlet weak var openNowSwitch: UISwitch!
+    
+    @IBOutlet weak var radiusPickerView: UIPickerView!
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        radiusPickerView.selectRow(4, inComponent: 0, animated: true)
     }
     // get rank
     @IBAction func rankSgChanged(_ sender: UISegmentedControl) {

@@ -77,6 +77,7 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="Nmp-gh-aln"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterBtn" destination="fbU-tJ-wRU" id="E3c-Jx-gzI"/>
                         <outlet property="searchBar" destination="Gvl-gT-Vty" id="Mbm-MT-3bB"/>
                         <outlet property="searchSg" destination="AMs-5B-MXA" id="gu0-04-ITL"/>
                     </connections>
@@ -388,6 +389,7 @@
                     </view>
                     <connections>
                         <outlet property="openNowSwitch" destination="sWm-cZ-glW" id="Z3x-cA-UBo"/>
+                        <outlet property="radiusPickerView" destination="vwf-Ub-vcW" id="XBh-94-CmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fk-la-cc6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,8 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchSg: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var filterBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -102,6 +104,11 @@ extension SearchVC: LocationServiceDelegate {
 extension SearchVC: FilterSettingsDelegate {
     // get query items from FilterVC
     func getQueryItems(rank: Rank, radius: String, isOpenNow: Bool) {
+        if rank == Rank.prominence && radius == "25000" && !isOpenNow {
+            filterBtn.setImage(#imageLiteral(resourceName: "filtersDefault"), for: .normal)
+        } else {
+            filterBtn.setImage(#imageLiteral(resourceName: "filters"), for: .normal)
+        }
         self.rank = rank
         self.radius = radius
         self.isOpenNow = isOpenNow
